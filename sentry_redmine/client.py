@@ -17,7 +17,7 @@ class RedmineClient(object):
         }
         url = '{}{}'.format(self.host, path)
         result = requests.get(url, verify=False, headers=headers)
-        return json.loads(result)
+        return json.loads(result.content)
 
     def get_projects(self):
         limit = 100
