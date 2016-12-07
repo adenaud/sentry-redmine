@@ -17,6 +17,10 @@ class RedmineClient(object):
         }
         url = '{}{}'.format(self.host, path)
         result = requests.get(url, verify=False, headers=headers, data=data)
+
+        if result.status_code != 200 and result.status_code != 201:
+            raise Exception("Redmine returned error {} : {}".format(result.status_code, result.reason))
+
         return json.loads(result.content)
 
     def get_projects(self):
