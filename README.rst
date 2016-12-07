@@ -4,6 +4,7 @@ sentry-redmine
 An extension for Sentry which integrates with Redmine. Specifically, it allows you to easily create
 Redmine issues from events within Sentry.
 
+This is a fork with SSL verfication disabled.
 
 Install
 -------
