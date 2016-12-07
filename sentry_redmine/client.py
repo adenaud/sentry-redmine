@@ -2,6 +2,7 @@ from __future__ import absolute_import
 
 from sentry import http
 from sentry.utils import json
+import requests
 
 
 class RedmineClient(object):
@@ -15,9 +16,8 @@ class RedmineClient(object):
             'Content-Type': "application/json",
         }
         url = '{}{}'.format(self.host, path)
-        session = http.build_session()
-        req = getattr(session, method.lower())(url, json=data, headers=headers)
-        return json.loads(req.text)
+        result = requests.get(url, verify=False, headers=headers)
+        return json.loads(result)
 
     def get_projects(self):
         limit = 100
