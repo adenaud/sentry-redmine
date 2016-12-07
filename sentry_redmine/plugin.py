@@ -11,8 +11,8 @@ from .forms import RedmineOptionsForm, RedmineNewIssueForm
 
 
 class RedminePlugin(IssuePlugin):
-    author = 'Sentry'
-    author_url = 'https://github.com/getsentry/sentry-redmine'
+    author = 'Sentry, Anthony DENAUD'
+    author_url = 'https://github.com/adenaud/sentry-redmine'
     version = '0.1.0'
     description = "Integrate Redmine issue tracking by linking a user account to a project."
     resource_links = [
