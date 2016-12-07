@@ -52,6 +52,6 @@ class RedmineClient(object):
         })
 
         if 'issue' not in response or 'id' not in response['issue']:
-            raise Exception('Unable to create redmine ticket')
+            raise Exception('Unable to create redmine ticket, Response : ' + json.dumps(response))
 
         return response
