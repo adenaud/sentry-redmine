@@ -16,7 +16,7 @@ class RedmineClient(object):
             'Content-Type': "application/json",
         }
         url = '{}{}'.format(self.host, path)
-        result = requests.get(url, verify=False, headers=headers, data=json.dumps(data))
+        result = requests.request(method, url, verify=False, headers=headers, data=json.dumps(data))
 
         if result.status_code != 200 and result.status_code != 201:
             raise Exception("Redmine returned error {} : {}".format(result.status_code, result.reason))
