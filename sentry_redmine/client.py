@@ -16,7 +16,7 @@ class RedmineClient(object):
             'Content-Type': "application/json",
         }
         url = '{}{}'.format(self.host, path)
-        result = requests.get(url, verify=False, headers=headers)
+        result = requests.get(url, verify=False, headers=headers, data=data)
         return json.loads(result.content)
 
     def get_projects(self):
